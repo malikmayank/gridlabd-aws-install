@@ -44,14 +44,53 @@ cd /home/ec2-user/gridlabd/source/third_party/
 . install_xercesc
 ```
 11. Install Armadillo, a linear algebra library:
-`sh scripts/install armadillo.sh`
+`sh scripts/install-armadillo.sh`
 12. Clone IEEE123 model in www folder:
-`sh scripts/copy-ieee123.sh`
+```
+cd /var/www/html
+git clone https://github.com/dchassin/ieee123-aws
+cp -R ieee123-aws/* .
+rm -rf ieee123-aws/
+mkdir data output
+chmod -R 777 data output config
+chown -R apache.apache .
+```
 13. Install GridLab-D:
-`sh scripts/install-gridlabd.sh`
-14. Configure Apache server:
-`sh scripts/configure-http.sh`
-15. Configure MySQL:
-`sh scripts/configure-mysql.sh`
-16. Restart Apache service:
+```
+cd /home/ec2-user/gridlabd/source
+autoreconf -isf
+./customize configure
+make install
+export PATH=/usr/local/bin:$PATH
+gridlabd --validate
+```
+14. Configure MSQL: Open my.cnf for editing:
+```
+cd /etc
+nano my.cnf
+```
+Edit/add following text in my.cnf:
+*[client]
+port=3306
+socket=/tmp/mysql.sock
+
+[mysqld]
+port=3306
+datadir=/var/lib/mysql
+socket=/tmp/mysql.sock*
+
+Save and close file. Change file permissions on my.cnf:
+'chmod 755 my.cnf'
+15. Restart MySQL service:
+'service mysqld restart'
+16. Launch MySQL console `mysql` and run the following query below:
+```
+CREATE USER 'gridlabd'@'localhost' IDENTIFIED BY '[password]';
+GRANT ALL PRIVILEGES ON *.* TO 'gridlabd'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+CREATE USER 'gridlabd_ro'@'%' IDENTIFIED BY '[password]';
+GRANT SELECT ON *.* TO 'gridlabd_ro'@'%';
+FLUSH PRIVILEGES;
+```
+17. Restart Apache service:
 `service httpd start`
