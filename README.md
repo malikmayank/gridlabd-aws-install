@@ -79,7 +79,8 @@ port=3306
 datadir=/var/lib/mysql
 socket=/tmp/mysql.sock
 ```
-Save and close file. Change file permissions on my.cnf:
+Save and close file.
+Change file permissions on my.cnf:
 `chmod 755 my.cnf`
 15. Restart MySQL service:
 'service mysqld restart'
