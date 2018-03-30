@@ -64,12 +64,7 @@ make install
 export PATH=/usr/local/bin:$PATH
 gridlabd --validate
 ```
-14. Configure MySQL. Open my.cnf for editing:
-```
-cd /etc
-nano my.cnf
-```
-Edit/add following text in my.cnf:
+14. Configure MySQL. Open my.cnf for editing `nano /etc/my.cnf`and add the following text:
 ```
 [client]
 port=3306
@@ -79,11 +74,12 @@ port=3306
 datadir=/var/lib/mysql
 socket=/tmp/mysql.sock
 ```
-Save and close file. Change file permissions on my.cnf:
-`chmod 755 my.cnf`
-15. Restart MySQL service:
+Save and close file.
+15. Change file permissions on /etc/my.cnf:
+`chmod 755 /etc/my.cnf`
+16. Restart MySQL service:
 `service mysqld restart`
-16. Launch MySQL console `mysql` and run the following query:
+16. Open MySQL console `mysql` and run the following query:
 ```
 CREATE USER 'gridlabd'@'localhost' IDENTIFIED BY '[password]';
 GRANT ALL PRIVILEGES ON *.* TO 'gridlabd'@'localhost' WITH GRANT OPTION;
