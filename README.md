@@ -1,9 +1,23 @@
-# gridlabd-aws-install
-GridLab-D installation script on Amazon Linux
+#gridlabd-aws-install
 
-This installation scripts has been tested for GridLab-D release 'slac-aws-1.0' and Amazon Linux AMI 2017.09.1
+##GridLab-D installation script on Amazon Linux
 
-Installation Steps:
+
+###Licensing Information:
+
+###Author and Contributor List:
+Mayank Malik
+David Chassin
+
+###File List:
+
+
+###Support Notes:
+These installation scripts has been tested for GridLab-D release 'slac-aws-1.0' and Amazon Linux AMI 2017.09.1
+
+Scripts are not actively maintained to support newer versions of GridLab-D, Amazon Linux, and/or other prerequisite software.
+
+###Installation Steps:
 1. Launch a new EC2 instance with Amazon Linux AMI
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/LaunchingAndUsingInstances.html
 2. Open an SSH client
