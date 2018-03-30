@@ -23,25 +23,25 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/LaunchingAndUsingInstances.h
 3. Locate your private key file. Your key must not be publicly viewable for SSH to work. Use this command if needed: `chmod 400 [keyfilename].pem`
 4. Connect to the instance using it's public DNS:
 `ssh -i "[keyfilename].pem" ec2-user@[Public IP address of instance]`
-5. Clone this Git repository:
-`git clone https://github.com/malikmayank/gridlabd-aws-install`
+5. Clone *scripts* folder from this Git repository:
+`git clone https://github.com/malikmayank/gridlabd-aws-install scripts`
 6. Install prerequisites:
-`sh install-base.sh`
+`sh scripts/install-base.sh`
 7. Install MySQL server, connector, and libraries:
-`sh install-mysql.sh`
+`sh scripts/install-mysql.sh`
 8. Clone GridLab-D source code from release 'slac-aws-1.0':
-`sh copy-gridlabd-source.sh`
+`sh scripts/copy-gridlabd-source.sh`
 9. Install lib-xercesc C++ Library:
-`sh install-libxercesc.sh`
+`sh scripts/install-libxercesc.sh`
 10. Install Armadillo, a linear algebra library:
-`sh install armadillo.sh`
+`sh scripts/install armadillo.sh`
 11. Clone IEEE123 model in www folder:
-`sh copy-ieee123.sh`
+`sh scripts/copy-ieee123.sh`
 12. Install GridLab-D:
-`sh install-gridlabd.sh`
+`sh scripts/install-gridlabd.sh`
 13. Configure Apache server:
-`sh configure-http.sh`
+`sh scripts/configure-http.sh`
 14. Configure MySQL:
-`sh configure-mysql.sh`
+`sh scripts/configure-mysql.sh`
 15. Restart Apache service:
 `service httpd start`
