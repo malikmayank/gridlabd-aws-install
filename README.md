@@ -1,6 +1,5 @@
 # gridlabd-aws-install
-
-## GridLab-D installation script on Amazon Linux
+GridLab-D installation script on Amazon Linux
 
 
 ### Licensing Information:
@@ -21,28 +20,28 @@ Scripts are not actively maintained to support newer versions of GridLab-D, Amaz
 1. Launch a new EC2 instance with Amazon Linux AMI
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/LaunchingAndUsingInstances.html
 2. Open an SSH client
-3. Locate your private key file. Your key must not be publicly viewable for SSH to work. Use this command if needed: chmod 400 [keyfilename].pem
+3. Locate your private key file. Your key must not be publicly viewable for SSH to work. Use this command if needed: `chmod 400 [keyfilename].pem`
 4. Connect to the instance using it's public DNS:
-ssh -i "[keyfilename].pem" ec2-user@[Public IP address of instance]
+`ssh -i "[keyfilename].pem" ec2-user@[Public IP address of instance]`
 5. Clone this Git repository:
-git clone https://github.com/malikmayank/gridlabd-aws-install
+`git clone https://github.com/malikmayank/gridlabd-aws-install`
 6. Install prerequisites:
-sh install-base.sh
+`sh install-base.sh`
 7. Install MySQL server, connector, and libraries
-sh install-mysql.sh
+`sh install-mysql.sh`
 8. Clone GridLab-D source code from release 'slac-aws-1.0'
-sh copy-gridlabd-source.sh
+`sh copy-gridlabd-source.sh`
 9. Intall lib-xercesc C++ Library
-sh install-libxercesc.sh
+`sh install-libxercesc.sh`
 10. Install Armadillo, a linear algebra library
-sh install armadillo.sh
+`sh install armadillo.sh`
 11. Clone IEEE123 model in www folder:
-sh copy-ieee123.sh
+`sh copy-ieee123.sh`
 12. Install GridLab-D
-sh install-gridlabd.sh
+`sh install-gridlabd.sh`
 13. Configure Apache server
-sh configure-http.sh
+`sh configure-http.sh`
 14. Configure MySQl
-sh configure-mysql.sh
+`sh configure-mysql.sh`
 15. Restart Apache service
-service httpd start
+`service httpd start`
