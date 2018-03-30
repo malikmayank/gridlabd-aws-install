@@ -83,7 +83,7 @@ Save and close file.
 Change file permissions on my.cnf:
 `chmod 755 my.cnf`
 15. Restart MySQL service:
-'service mysqld restart'
+`service mysqld restart`
 16. Launch MySQL console `mysql` and run the following query:
 ```
 CREATE USER 'gridlabd'@'localhost' IDENTIFIED BY '[password]';
