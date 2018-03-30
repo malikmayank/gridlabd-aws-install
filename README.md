@@ -5,9 +5,8 @@ GridLab-D installation script on Amazon Linux
 ### Licensing Information:
 
 ### Author and Contributor List:
-Mayank Malik
-
-David Chassin
+* Mayank Malik (http://github.com/malikmayank)
+* David Chassin (http://github.com/dchassin)
 
 ### File List:
 
