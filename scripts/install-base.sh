@@ -1,4 +1,5 @@
-sudo su
+#!/bin/bash
+
 yum update -y
 
 #install base software
