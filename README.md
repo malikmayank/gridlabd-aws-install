@@ -75,11 +75,14 @@ datadir=/var/lib/mysql
 socket=/tmp/mysql.sock
 ```
 Save and close file.
+
 15. Change file permissions on /etc/my.cnf:
 `chmod 755 /etc/my.cnf`
+
 16. Restart MySQL service:
 `service mysqld restart`
-16. Open MySQL console `mysql` and run the following query:
+
+17. Open MySQL console `mysql` and run the following query:
 ```
 CREATE USER 'gridlabd'@'localhost' IDENTIFIED BY '[password]';
 GRANT ALL PRIVILEGES ON *.* TO 'gridlabd'@'localhost' WITH GRANT OPTION;
@@ -88,5 +91,5 @@ CREATE USER 'gridlabd_ro'@'%' IDENTIFIED BY '[password]';
 GRANT SELECT ON *.* TO 'gridlabd_ro'@'%';
 FLUSH PRIVILEGES;
 ```
-17. Restart Apache service:
+18. Restart Apache service:
 `service httpd start`
