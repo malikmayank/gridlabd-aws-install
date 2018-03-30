@@ -66,10 +66,10 @@ chmod 755 my.cnf #777 is not allowed - world writable. mysqld won't restart
 service mysqld restart
 mysql
 # Create user gridlabd_ro and gridlabd in mysql database
-#CREATE USER 'gridlabd'@'localhost' IDENTIFIED BY 'gridlabd';
+#CREATE USER 'gridlabd'@'localhost' IDENTIFIED BY '[password]';
 #GRANT ALL PRIVILEGES ON *.* TO 'gridlabd'@'localhost' WITH GRANT OPTION;
 #FLUSH PRIVILEGES;
-#CREATE USER 'gridlabd_ro'@'%' IDENTIFIED BY 'gridlabd';
+#CREATE USER 'gridlabd_ro'@'%' IDENTIFIED BY '[password]';
 #GRANT SELECT ON *.* TO 'gridlabd_ro'@'%';
 #FLUSH PRIVILEGES;
 # --------------------------------
