@@ -4,7 +4,7 @@ cd /home/ec2-user
 
 #install MySql Server
 yum install https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm -y
-yum install mysql56-server -y # for Amazon linux
+yum install mysql-server -y # for Amazon linux
 
 #install MySql Connector
 wget https://dev.mysql.com/get/Downloads/Connector-C/mysql-connector-c-6.1.9-linux-glibc2.5-x86_64.tar.gz
